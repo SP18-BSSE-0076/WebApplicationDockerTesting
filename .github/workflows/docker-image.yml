@@ -24,4 +24,4 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         repository: knight2k21/webapplicationdockertest
-        tags: latest
+        tags: latest , ${{github.run_number}}

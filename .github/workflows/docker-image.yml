@@ -23,4 +23,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag knight2k21/WebApplicationDockerTesting:$(date +%s)
     - name: Docker Push
-      run: docker push ${{secrets.DOCKER_USER}}/WebApplicationDockerTesting
+      run: docker push ${{secrets.DOCKER_USER}}/webapplicationdockertesting

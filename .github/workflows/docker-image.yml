@@ -21,7 +21,7 @@ jobs:
       run:  |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: publish to Docker hub
-      uses: docker/build-push-action@v1
+      uses: docker/build-push-action@v2
       with:
         repository: knight2k21/webapplicationdockertest
         tags: latest

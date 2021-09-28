@@ -20,8 +20,8 @@ jobs:
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       run:  |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag knight2k21\webapplicationdockertest:$(date +%s)
-      
-    - name: Docker Push
-      run: docker push ${{secrets.DOCKER_USER}}\webapplicationdockertesting
+    - name: publish to Docker hub
+      uses: docker/build-push-action@v1
+      with:
+        repository: knight2k21/webapplicationdockertest
+        tags: latest

@@ -24,4 +24,4 @@ jobs:
       run: docker build . --file Dockerfile --tag knight2k21\webapplicationdockertest:$(date +%s)
       
     - name: Docker Push
-      run: docker push ${{secrets.DOCKER_USER}}/webapplicationdockertesting
+      run: docker push ${{secrets.DOCKER_USER}}\webapplicationdockertesting

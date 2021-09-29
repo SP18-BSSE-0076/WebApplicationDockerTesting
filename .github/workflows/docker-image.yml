@@ -20,7 +20,7 @@ jobs:
         DOCKER_USER: ${{secrets.DOCKER_USER}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       run:  |
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        docker login -u knight2k21 -p knight943
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag knight2k21/webapplicationdockertesting$(date +%s)
       

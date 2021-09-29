@@ -15,8 +15,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag knight2k21/webapplicationdockertest:$(date +%s)
-      
-    - name: Docker Push
-      run: docker push knight2k21/webapplicationdockertest
+    - name: publish to Docker hub
+      uses: docker/build-push-action@v2
+      with:
+        username: ${{secrets.DOCKER_USER}}
+        password: ${{secrets.DOCKER_PASSWORD}}
+        repository: knight2k21/webapplicationdockertest
+        tags: latest , ${{github.run_number}}

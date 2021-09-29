@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  webapplicationdockertesting:
+    image: ${DOCKER_REGISTRY-}webapplicationdockertesting
+    build:
+      context: .
+      dockerfile: Dockerfile

@@ -21,6 +21,6 @@ jobs:
       run:  |
         docker login -u knight2k21 -p knight943
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag knight2k21/webapplicationdockertesting:$(date +%s)
+      run: docker build . --file Dockerfile --tag knight2k21/webapplicationdockertesting:latest
     - name: Docker Push
       run: docker push knight2k21/webapplicationdockertesting

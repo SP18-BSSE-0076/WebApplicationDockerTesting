@@ -14,9 +14,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
-    - name: Docker Login
-      run:  docker login -u knight2k21 -p knight943
       
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag knight2k21/webapplicationdockertesting:$(date +%s)

@@ -13,8 +13,12 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag knight2k21/webapplicationdockertesting:latest
-    - name: Docker Push
-      run: docker push knight2k21/webapplicationdockertesting
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: publish to Docker hub
+      uses: docker/build-push-action@v2
+      with:
+        username: ${{secrets.DOCKER_USER}}
+        password: ${{secrets.DOCKER_PASSWORD}}
+        repository: knight2k21/webapplicationdockertest
+        tags: latest , ${{github.run_number}}
